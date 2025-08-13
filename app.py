@@ -38,4 +38,7 @@ def hello():
         return jsonify({"error": str(e)}), 500
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    # Get port from environment variable or default to 5000
+    port = int(os.environ.get('PORT', 5000))
+    # Run the app, listening on all interfaces
+    app.run(host='0.0.0.0', port=port, debug=True)
