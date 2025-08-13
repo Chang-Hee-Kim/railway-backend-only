@@ -35,6 +35,7 @@ def hello():
         
         return jsonify([ts[0] for ts in timestamps])
     except Exception as e:
+        print(f"Database error: {e}")
         return jsonify({"error": str(e)}), 500
 
 if __name__ == '__main__':
