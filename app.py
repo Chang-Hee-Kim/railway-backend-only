@@ -13,7 +13,9 @@ def get_db_connection():
     conn = psycopg2.connect(os.environ['DATABASE_URL'])
     return conn
 
-@app.route('/api/hello')
+# @app.route('/api/hello')
+@app.route('/')
+
 def hello():
     try:
         conn = get_db_connection()
